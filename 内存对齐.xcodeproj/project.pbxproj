@@ -15,6 +15,8 @@
 		3A7F218425ED1B5D009EFB27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F218225ED1B5D009EFB27 /* LaunchScreen.storyboard */; };
 		3A7F218725ED1B5D009EFB27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F218625ED1B5D009EFB27 /* main.m */; };
 		3A7F219025ED1EB6009EFB27 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F218F25ED1EB6009EFB27 /* Test.m */; };
+		3A7F219525ED216E009EFB27 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F219425ED216E009EFB27 /* Dog.m */; };
+		3A7F219925ED22AB009EFB27 /* Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F219825ED22AB009EFB27 /* Cat.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		3A7F218625ED1B5D009EFB27 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3A7F218E25ED1EB6009EFB27 /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		3A7F218F25ED1EB6009EFB27 /* Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
+		3A7F219325ED216E009EFB27 /* Dog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
+		3A7F219425ED216E009EFB27 /* Dog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
+		3A7F219725ED22AB009EFB27 /* Cat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cat.h; sourceTree = "<group>"; };
+		3A7F219825ED22AB009EFB27 /* Cat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cat.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,10 @@
 				3A7F217B25ED1B5A009EFB27 /* ViewController.m */,
 				3A7F218E25ED1EB6009EFB27 /* Test.h */,
 				3A7F218F25ED1EB6009EFB27 /* Test.m */,
+				3A7F219325ED216E009EFB27 /* Dog.h */,
+				3A7F219425ED216E009EFB27 /* Dog.m */,
+				3A7F219725ED22AB009EFB27 /* Cat.h */,
+				3A7F219825ED22AB009EFB27 /* Cat.m */,
 				3A7F217D25ED1B5A009EFB27 /* Main.storyboard */,
 				3A7F218025ED1B5D009EFB27 /* Assets.xcassets */,
 				3A7F218225ED1B5D009EFB27 /* LaunchScreen.storyboard */,
@@ -150,7 +160,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A7F219525ED216E009EFB27 /* Dog.m in Sources */,
 				3A7F219025ED1EB6009EFB27 /* Test.m in Sources */,
+				3A7F219925ED22AB009EFB27 /* Cat.m in Sources */,
 				3A7F217C25ED1B5A009EFB27 /* ViewController.m in Sources */,
 				3A7F217625ED1B5A009EFB27 /* AppDelegate.m in Sources */,
 				3A7F218725ED1B5D009EFB27 /* main.m in Sources */,

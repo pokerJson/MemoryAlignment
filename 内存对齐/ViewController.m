@@ -6,8 +6,11 @@
 //
 
 #import "ViewController.h"
-#import "Test.h"
 #import <objc/runtime.h>
+#import "Test.h"
+#import "Dog.h"
+#import "Cat.h"
+#import <malloc/malloc.h>
 
 struct S {
     char a;
@@ -33,7 +36,38 @@ struct S {
     
     //Test类没有任何成员（其实内部有个isa指针，指针占8字节），所以下面打印，可以给他加几个属性等测试内存对齐
     Test *te = [Test new];
-    NSLog(@"test所占内存==%ld",class_getInstanceSize([te class]));
+    NSLog(@"test所占内存==%ld",class_getInstanceSize([te class]));//8
+    NSLog(@"test实际分配的内存==%ld",malloc_size((__bridge const void *)(te)));//16
+
+    //name 和 nickName是指针对象各站8个字节，name从0开始（0-7），nickName从8开始（8-15），age占4字节从16开始（16-19），这三个属性占的自己很整齐，所以最后加上dog的isa所占的8字节，分析 01234567 89101112131415 1617181929212223 2425262728203031共32
+    Dog *dog = [Dog new];
+    NSLog(@"dog所占内存==%ld",class_getInstanceSize([dog class]));//32
+    NSLog(@"dog实际分配的内存==%ld",malloc_size((__bridge const void *)(dog)));//32
+
+    //name8 nickName8 age4 score8字节 + isa
+    //01234567 89101112131415 1617181920212223 24-31 32-39 共40
+    Cat *cat = [[Cat alloc]init];
+    NSLog(@"cat所占内存==%ld",class_getInstanceSize([cat class]));//40
+    NSLog(@"cat实际分配的内存==%ld",malloc_size((__bridge const void *)(cat)));//48
+    
+    ///总结
+    /*
+     class_getInstanceSize 和 sizeof等价，理论上分配的最少内存，
+     malloc_size实际系统真正分配的内存（iOS系统以16自己对齐，所以分配的额是16字节的倍数）
+     底层实现原理
+     void *
+     calloc(size_t num_items, size_t size)
+     {
+         void *retval;
+             // 内存对齐,40 => 48  16的倍数
+         retval = malloc_zone_calloc(default_zone, num_items, size);
+         if (retval == NULL) {
+             errno = ENOMEM;
+         }
+         return retval;
+     }
+     */
+    
 }
 
 
